@@ -17,14 +17,14 @@ dockitems_persist: []
 #   path: "/Applications/Sublime Text.app/"
 #   pos: 5
 
-configure_sudoers: false
-sudoers_custom_config: ''
+configure_sudoers: true
+# sudoers_custom_config: ''
 # Example:
-# sudoers_custom_config: |
-#   # Allow users in admin group to use sudo with no password.
-#   %admin ALL=(ALL) NOPASSWD: ALL
+sudoers_custom_config: |
+  # Allow users in admin group to use sudo with no password.
+  %admin ALL=(ALL) NOPASSWD: ALL
 
-dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
+dotfiles_repo: https://github.com/fegvilela/dotfiles.git
 dotfiles_repo_accept_hostkey: true
 dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
 dotfiles_files:
@@ -33,6 +33,7 @@ dotfiles_files:
   - .inputrc
   - .osx
   - .vimrc
+  - .aliases
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
@@ -62,6 +63,35 @@ homebrew_installed_packages:
   - wget
   - wrk
   - zsh-history-substring-search
+  ## fegvilela
+  - bat		
+  - htop		
+  - libsoxr		
+  - openssl@1.1	
+  - six
+  - ca-certificates	
+  - json-c		
+  - libtool		
+  - opus		
+  - speexdsp
+  - figlet		
+  - krb5		
+  - libvorbis	
+  - pgcli		
+  - sqlite
+  - flac		
+  - libogg		
+  - m4		
+  - python-tabulate	
+  - xz
+  - gdbm		
+  - libpq		
+  - mpdecimal	
+  - python@3.9
+  - git-delta	
+  - libsndfile	
+  - ncurses		
+  - readline
 
 homebrew_taps:
   - homebrew/core
@@ -81,6 +111,18 @@ homebrew_cask_apps:
   - sublime-text
   - transmit
   - vagrant
+  ### fegvilela
+  - iterm2
+  - visual-studio-code
+  - brave-browser
+  - telegram
+  - font-fira-code                           
+  - spectacle
+  - tidal
+  - homebrew/cask-drivers/logitech-g-hub
+  - bitwarden
+  - authy
+  
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: []
@@ -104,7 +146,8 @@ npm_packages: []
 # - name: webpack
 #   state: present # present/absent/latest, default: present
 #   version: "^2.6" # default: N/A
-pip_packages: []
+pip_packages: 
+  - name: ding-ding
 # - name: mkdocs
 #   state: present # present/absent/latest, default: present
 #   version: "0.16.3" # default: N/A
